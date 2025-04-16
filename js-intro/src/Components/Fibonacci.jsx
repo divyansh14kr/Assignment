@@ -4,13 +4,6 @@ const FibonacciFinder = () => {
   const [input, setInput] = useState("");
   const [result, setResult] = useState(null);
 
-  const n = parseInt(input);
-  if (!isNaN(n) && n > 0) {
-    setResult(fibonacci(n));
-  } else {
-    setResult("Please enter a valid positive number.");
-  }
-
   const fibonacci = (n) => {
     let a = 1, b = 1;
     if (n === 1 || n === 2) return 1;
@@ -42,7 +35,7 @@ const FibonacciFinder = () => {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter position (e.g. 5)"
       />
-      <button onClick={ setResult(fibonacci(n))}>Find</button>
+      <button onClick={handleCheck}>Find</button>
       {result !== null && <p>Result: {result}</p>}
     </div>
   );

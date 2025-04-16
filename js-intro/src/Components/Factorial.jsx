@@ -5,7 +5,6 @@ const FactorialCalculator = () => {
   const [result, setResult] = useState(null);
 
   const factorial = (n) => {
-    const num = parseInt(input);
     if (n === 0 || n === 1) return 1;
     let fact = 1;
     for (let i = 2; i <= n; i++) {
@@ -14,6 +13,14 @@ const FactorialCalculator = () => {
     return fact;
   };
 
+  const handleCalculate = () => {
+    const num = parseInt(input);
+    if (!isNaN(num) && num >= 0) {
+      setResult(factorial(num));
+    } else {
+      setResult("Please enter a valid non-negative integer.");
+    }
+  };
 
   return (
     <div>
@@ -24,7 +31,7 @@ const FactorialCalculator = () => {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter a number"
       />
-      <button onClick={factorial(input)}>Calculate</button>
+      <button onClick={handleCalculate}>Calculate</button>
       {result !== null && <p>Result: {result}</p>}
     </div>
   );

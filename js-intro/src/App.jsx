@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import './App.css'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import React from "react";
+import './App.css'
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
 
 import EvenOdd from "./Components/EvenOdd";
 import LargestAmonng from "./Components/LargestAmong";
@@ -59,34 +60,35 @@ const App = () => {
           <button><Link to="/anagrams">Anagram Check</Link></button>
           <button><Link to="/numwords">Word Count</Link></button>
           <button><Link to="/capitalize">Capitalize Words</Link></button>
+          
         </div>
+        <Routes>
+  <Route path="/evenodd" element={<EvenOdd />} />
+  <Route path="/largestamong" element={<LargestAmonng />} />
+  <Route path="/leapyear" element={<LeapYear />} />
+  <Route path="/factorial" element={<Factorial />} />
+  <Route path="/fibonacci" element={<Fibonacci />} />
+  <Route path="/palindrome" element={<Palindrome />} />
+  <Route path="/vowelcount" element={<VowelCounter />} />
+  <Route path="/reversestring" element={<ReverseStringComponent />} />
+  <Route path="/digitsum" element={<DigitSum />} />
+  <Route path="/prime" element={<PrimeChecker />} />
+  <Route path="/gcd" element={<GCDCalculator />} />
+  <Route path="/lcm" element={<LCMCalculator />} />
+  <Route path="/binary" element={<DecimalToBinary />} />
+  <Route path="/decimal" element={<BinaryToDecimal />} />
+  <Route path="/sort" element={<Sort />} />
+  <Route path="/secondlargest" element={<SecondLargest />} />
+  <Route path="/removeduplicates" element={<RemoveDuplicates />} />
+  <Route path="/frequency" element={<FrequencyCounter />} />
+  <Route path="/mergenodupli" element={<MergeArrays />} />
+  <Route path="/intersection" element={<ArrayIntersection />} />
+  <Route path="/union" element={<ArrayUnion />} />
+  <Route path="/anagrams" element={<AnagramChecker />} />
+  <Route path="/numwords" element={<NumWords />} />
+  <Route path="/capitalize" element={<CapitalizeWords />} />
+</Routes>
 
-        <Switch>
-          <Route path="/evenodd" component={EvenOdd} />
-          <Route path="/largestamong" component={LargestAmonng} />
-          <Route path="/leapyear" component={LeapYear} />
-          <Route path="/factorial" component={Factorial} />
-          <Route path="/fibonacci" component={Fibonacci} />
-          <Route path="/palindrome" component={Palindrome} />
-          <Route path="/vowelcount" component={VowelCounter} />
-          <Route path="/reversestring" component={ReverseStringComponent} />
-          <Route path="/digitsum" component={DigitSum} />
-          <Route path="/prime" component={PrimeChecker} />
-          <Route path="/gcd" component={GCDCalculator} />
-          <Route path="/lcm" component={LCMCalculator} />
-          <Route path="/binary" component={DecimalToBinary} />
-          <Route path="/decimal" component={BinaryToDecimal} />
-          <Route path="/sort" component={Sort} />
-          <Route path="/secondlargest" component={SecondLargest} />
-          <Route path="/removeduplicates" component={RemoveDuplicates} />
-          <Route path="/frequency" component={FrequencyCounter} />
-          <Route path="/mergenodupli" component={MergeArrays} />
-          <Route path="/intersection" component={ArrayIntersection} />
-          <Route path="/union" component={ArrayUnion} />
-          <Route path="/anagrams" component={AnagramChecker} />
-          <Route path="/numwords" component={NumWords} />
-          <Route path="/capitalize" component={CapitalizeWords} />
-        </Switch>
       </div>
     </Router>
   );

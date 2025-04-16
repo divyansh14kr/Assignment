@@ -25,4 +25,4 @@ const Sort = () => {
   );
 };
 
-export default BasicSort;
+export default Sort;
